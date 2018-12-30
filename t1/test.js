@@ -1,19 +1,20 @@
-var myCar = new Object();
-myCar.maxSpeed = 50;
-myCar.driver = "Daniel";
-myCar.drive = function (){ console.log("now driving");};
+var Car = function(maxSpeed, driver){
+    
+    this.maxSpeed = maxSpeed;
+    this.driver = driver;
+    this.drive = function(speed, time){ 
+        console.log(speed * time);
+    };
+    this.logDriver = function(){
+        console.log("This driver name is " + this.driver);   
+    };
 
-myCar.drive();
+}
 
-var myCar2 = {
-    maxSpeed: 70,
-    driver: "DanielM",
-    drive: function(speed, time){ 
-       console.log(speed * time);
-    }
-};
+var myCar = new Car(70, "Ninja");
+var myCar2 = new Car(60, "Robin");
+var myCar3 = new Car(30, "Ben");
+var myCar4 = new Car(100, "Jinx");
 
-console.log(myCar2.maxSpeed);
-myCar2.drive(50, 3);
-
-
+myCar.drive(89,3);
+myCar2.logDriver();
